@@ -26,7 +26,7 @@ void interrupt handler(void) {
     }
     
     if(TMR1IE && TMR1IF){
-        if (motorCounter == getMotorCounterBasedOnBottlesLeft()){
+        if (motorCounter >= getMotorCounterBasedOnBottlesLeft()){
             PORTCbits.RC1 = 1;
             motorCounter = 0;
         }else{

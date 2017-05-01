@@ -5,281 +5,6 @@
  * Created on July 18, 2016, 12:11 PM
  */
 
-// cleaned up code
-// added interrupt code
-// experimented with bottom bin servo -> magnets, getting it to 90 degrees
-//testing servo code with bin
-//testing pwm for dc with interrupts
-
-//sat tested bottom bin code
-//sensor area push
-//cleaned up more code
-
-//tested rgb alone
-//tested multiplexr
-//tested it with soldiered stuff
-//tested it with bottles inside
-//right side then left side
-
-//testing data for the light sensors: (RGBC)
-
-//right
-
-//yopback: 
-//51/75/117/174
-//52/67/111/164
-//98/86/236/25
-//23/85/162/217
-//57/104/182/24
-
-//5/3/59/252
-//3/6/99/45
-
-//225/224/27/151
-//228/243/244/137
-//155/159/195/188
-//252/242/43/208
-//226/253/61/215
-//107/140/14/201
-
-//131/39/162/14
-//241/24/130/75
-
-//
-
-//yopcap: r>100 g<100 c<170
-
-//133/69/18/145
-//95/85/27/138
-//131/67/16/140
-//124/70/19/139
-//138/49/253/107
-//121/41/245/78
-//116/39/243/66
-//127/68/16/137
-
-//63/20/226/239
-//127/41/245/81
-//93/85/27/138
-
-//134/50/253/104
-//208/65/11/113
-//130/43/247/88
-
-//yopno:
-
-//77/156/79/254
-//80/160/78/2
-//105/189/108/83
-//105/185/101/74
-
-//61/167/91/21
-//79/170/88/21
-//75/177/100/38
-//62/169/93/13
-
-//72/155/76/243
-//81/163/84/10
-//68/159/87/2
-
-//eskaback:
-
-//215/80/24/20
-//144/9/185/22
-//249/104/48/84
-//254/138/89/163
-//218/62/236/217
-//236/104/54/80
-
-//eskacap:  r>200 g>100 b>100 c>100
-
-//226/108/119/134
-//233/114/121/147
-//240/115/104/142
-//232/115/123/149
-//239/123/135/175
-//240/124/137/175
-
-//eskano:
-
-//200/42/217/135
-//97/201/129/111
-//69/176/109/36
-//178/28/204/89
-//169/16/194/61
-//104/212/140/135
-//88/196/130/94
-
-//left
-
-//yopback: c < 250 
-
-//105/195/123/255
-//34/136/52/255
-//91/154/50/255
-//161/233/34/72
-//195/237/33/255
-//11/8/254/255
-//243/255/137/255
-//
-
-//yopcap:
-
-//32/11/241/248
-//188/40/91/100
-//198/104/109/193
-//220/109/__/__
-//221/158/68/85
-//218/176/95/163
-
-//189/13/196/119
-
-
-//50/104/66/232
-//46/184/95/57
-//58/206/125/52
-//81/227/51/95
-//10/84/249/78
-//24/145/45/241
-//82/112/1/175
-
-//139/172/27/108
-//101/169/57/226
-//169/234/217/88
-//131/254/175/214
-//103/142/189/25
-//130/202/171/238
-//101/231/139/82
-//57/117/64/76
-//152/198/207/126
-
-//50/20/11/248
-//217/67/105/249
-//240/116/255/131
-//161/122/254
-//136/220/104/29
-//69/253/252/63
-//136/115/65/254
-//107/36/171/208
-//66/72/209/166
-
-//yopno:
-
-//94/67/26/158
-//28/115/239/63
-//190/239/58/197
-//243/73/168/122
-//221/36/157/25
-
-//110/246/71/120
-//74/173/105/36
-//47/101/141/78
-//184/71/54/133
-//217/134/148/44
-//8/94/132/74
-//155/80/166/120
-//14/54/49/126
-//121/194/90/254
-//92/203/228/187
-//187/173/227/100
-//54/194/249/125
-
-
-//eskaback:
-
-//127/62/240/172
-//176/230/0/15
-//254/188/87/16
-//168/87/97/144
-//152/12/141/11
-
-//eskacap:
-
-//46/156/175/115
-//187/133/10/163
-//142/46/22/94
-//70/167/33/93
-//232/175/73/93
-//76/109/16/88
-
-//eskano:
-
-//36/192/137/145
-//164/54/237/244
-//113/7/181/69
-//44/212/157/194
-//70/132/217/34
-//26/192/144/149
-
-//new round yop tests
-
-//yopcap
-
-//147/74/252/144
-//247/39/225/130
-//127/88/16/100
-//236/60/242/191
-//167/4/195/170
-//184/19/212/40
-//209/161/97/83
-
-//78/113/39/135
-//83/155/96/60
-
-
-//146/146/78/247
-//200/180/96/192
-
-//after support
-//51/249/169/113
-//83/243/165/130
-//124/4/184/210
-//141/54/234/107      
-//100/7/185
-
-//yop: R>100 G<100 C>100 or R<100 G>230 B>150 C>120
-
-//yopback:
-
-//161/172/161/245
-//149/211/153/31
-//164/213/160/139
-
-//yopnocap:
-
-//221/126/231/89
-//215/83/115/28
-//124/201/247/167
-
-//eskacap:
-
-//40/17/250/79
-//79/112/197/143
-//20/7/247/33
-//229/6/56/48
-//1/47/131/191
-//65/11/185
-//14/218/130/125
-
-//eskaback:
-
-//25/221/118/148
-//57/12/150/246
-//240/212/97/56
-//117/81/209/174
-//84/43/200/99
-//90/37/172/85
-
-//eskano:
-
-//58/29/173/45
-//144/77/209/193
-//198/155/252/146
-//20/250/143/186
-//96/36/169/69
-//55/254/132/207
-
-
 #include <xc.h>
 #include <stdio.h>
 #include <stdlib.h>
@@ -295,7 +20,7 @@
 #define __lcd_newline() lcdInst(0b11000000);
 
 const char keys[] = "123A456B789C*0#D"; 
-const int LEFT = 4, RIGHT = 6, ENTER = 3, BACK = 0;
+const int LEFT = 1, RIGHT = 2, ENTER = 3, BACK = 0;
 int runInfo[6] = {40,10,2,3,3,2};
 unsigned char time[7];
 unsigned char lastRunTime[7];
@@ -303,9 +28,8 @@ int timerDisabled = 0;
 int currentMainProgramScreen = 0;
 int currentBottleBin = 0;
 int currentBottle = 0;
-
-int randomSpeed = 0;
-int lastSortedBottleTime = 0;
+int breakCounter = 0;
+int BREAK_CONSTANT = 300;
 
 void main(void) {
     initializePicSettings(); //Set up the PIC
@@ -316,16 +40,12 @@ void main(void) {
         if (userInput == keys[ENTER]){ //Enter selected subprogram
             enterSelectedSubProgramFromMainProgram();
         }else if (userInput == keys[LEFT]){ //Cycle the screen to the left
-            cycleProgramScreenLeft(&currentMainProgramScreen,0,3);
+            cycleProgramScreenLeft(&currentMainProgramScreen,0,2);
             displayMainProgramLcdScreen();
         }else if (userInput == keys[RIGHT]){ //Cycle the screen to the right
-            cycleProgramScreenRight(&currentMainProgramScreen,0,3);
+            cycleProgramScreenRight(&currentMainProgramScreen,0,2);
             displayMainProgramLcdScreen();
         }
-        else if (userInput == keys[0]){
-            moveBinServo(1);
-        }
-    }
 }
      
 void initializePicSettings(){
@@ -398,12 +118,14 @@ void initializePicPins(){
     PEIE = 1; //Enable Peripheral Interrupts
 }
 
+//Set up LCD Screen
 void initializeLcdScreen(){
     initializeLcdSettings();
     displayMainProgramLcdScreen(0); //Main program starting screen
 }
 
-unsigned char getPressedKeypadKey(){
+//Get keypad input from user
+unsigned char getPressedKeypadKey(){ 
     while(PORTBbits.RB1 == 0){}
     unsigned char keypress = (PORTB & 0xF0)>>4; // Read the 4 bit character code
     while(PORTBbits.RB1 == 1){ //Wait for user to release key
@@ -413,26 +135,25 @@ unsigned char getPressedKeypadKey(){
     return keys[keypress]; //Return the pressed key
 }
 
+//Print out timer array in readable form
 void printTime(){
     lcdInst(0b10000000);
     printf("%02x/%02x   ", time[5],time[4]);    //Print date in YY/MM/DD
     printf("%02x:%02x:%02x", time[2]+1,time[1],time[0]);    //HH:MM:SS
 }
 
+//Enter the correct operation when start button is pressed
 void enterSelectedSubProgramFromMainProgram(){
     switch(currentMainProgramScreen){
                 case 0: operation();
                         break;
-                case 1: pushBottle();
-                        break;
                 case 2: EEPROM();
-                        break;
-                case 3: past_run_access();
                         break;
     }    
     displayMainProgramLcdScreen();
 }
 
+//Shift program screen left
 void cycleProgramScreenLeft(int *programScreen, int min, int max){
     if (*programScreen == min){
         *programScreen = max;
@@ -441,6 +162,7 @@ void cycleProgramScreenLeft(int *programScreen, int min, int max){
     }
 }
 
+//Shift program screen right
 void cycleProgramScreenRight(int *programScreen, int min, int max){
     if (*programScreen == max){
         *programScreen = min;
@@ -449,6 +171,7 @@ void cycleProgramScreenRight(int *programScreen, int min, int max){
     }
 }
 
+//On the RTC clock screen, turn on interrupts
 void toggleRTCBasedOnCurrentMainProgramScreen(){
     if (currentMainProgramScreen == 1){
         ei();
@@ -457,7 +180,7 @@ void toggleRTCBasedOnCurrentMainProgramScreen(){
     }
 }
 
-//update time array
+//Update the time array with values of current time
 void updateCurrentTime(){
     //Reset RTC memory pointer 
     I2C_Master_Start(); //Start condition
@@ -475,7 +198,9 @@ void updateCurrentTime(){
     I2C_Master_Stop();
 }
 
+//Convert timer array values into comparable integer
 int getCurrentTimeInSeconds(){
+    updateCurrentTime();
     int currentTime = 0;
     char str[2];
     sprintf(str, "%02x",time[0]);
@@ -487,25 +212,29 @@ int getCurrentTimeInSeconds(){
     return currentTime;
 }
 
+//Detect if cap is on the bottle
 int capIsOnBottle(){
     unsigned char rgbc[4];
     int v1, v2;
     
+    //Clear RGBC values
     for (int i = 0; i < 4; i++){
         rgbc[i] = 0;
     }
     
+    //Query each sensor for detection values
     setMultiplexerToSensor(2);
     v1 = storeRgbSensorInputIntegerValuesInto(&rgbc, 2);
     
     setMultiplexerToSensor(1);
     v2 = storeRgbSensorInputIntegerValuesInto(&rgbc, 1);
     
-    //__lcd_newline();
-    //printf("        %i/%i",v1,v2);
+    __lcd_newline();
+    printf("%i/%i",v2,v1);
     return v1 | v2;   
 }
 
+//Set SDA/SCL pins to certain sensor
 void setMultiplexerToSensor(int num){
     if (num == 1){
         //Write to Multiplexer
@@ -524,6 +253,7 @@ void setMultiplexerToSensor(int num){
     }
 }
 
+//Get RGBC values from the sensors and determine if cap is on bottle
 int storeRgbSensorInputIntegerValuesInto(unsigned char *colorValues[4], int sensorNum){
    //Write Start Condition
     I2C_Master_Start();
@@ -566,44 +296,28 @@ int storeRgbSensorInputIntegerValuesInto(unsigned char *colorValues[4], int sens
     
     int r1 = colorValue[0], g1 = colorValue[1], b1 = colorValue[2], c1 =colorValue[3];
     
-    //lcdClear();
-    //printf("%i/%i/%i/%i%i", r1,g1,b1,c1,currentBottle); 
-    
     return analyzeRgbcForSensor(sensorNum, colorValue);
 }
 
-//false pos: 226/110/229/252, 183/28/207/90, 133/20/231/55, 167/46/254/152
-//bad neg:
-
-//missed pos: 11/206/122/60
-//62/189/109/160
-//118/193/114/79
-//22/169/78/206
-//167/210/131/158
-//57/241/163/104
-//104/243/139/204
-//85/53/213/55
-//84/254/175/153
-//67/247/171/129
-
+//Use formula to determine if cap is on the bottle
 int analyzeRgbcForSensor(int sensorNum, unsigned char rgbc[4]){
+    //Store in RGBC values
     int r1 = rgbc[0], g1 = rgbc[1], b1 = rgbc[2], c1 =rgbc[3];
     
-    //lcdClear();
-    //printf("%i/%i/%i/%i", r1,g1,b1,c1);   
+    lcdClear();
+    printf("%i/%i/%i/%i", r1,g1,b1,c1);   
     
+    //Apply formulas to determine if cap is on bottle
     if (sensorNum == 2){
-        if (r1 > 190 && g1 > 100 && b1 > 100 && c1 > 100 && currentBottle == 1){
-            return 1;
-        }else if (r1 > 100 && g1 < 100 && c1 < 170 && currentBottle == 0){
+        if (r1 > 1.2*g1 && currentBottle == 0){
             return 1;
         }else{
             return 0;
         }
     }else if (sensorNum == 1){
-        if (((r1 > 80 && b1+g1 < 260 && c1 > 70) | (r1 < 120 && g1 > 180 && c1 > 80)) && currentBottle == 0){
+        if (b1 > 1.2*g1 && (r1 + 2*g1) < 350 && currentBottle == 1){
             return 1;        
-        }else if (r1+g1+b1 < 350 && currentBottle == 1){
+        }else if (r1 > 1.2*g1 && currentBottle == 0){
             return 1;
         }else{
             return 0;
@@ -611,6 +325,248 @@ int analyzeRgbcForSensor(int sensorNum, unsigned char rgbc[4]){
     }
 }
 
+//activate autonomous sensor testing
+void operation(){
+    activateDCmotors();
+    
+    //Clear variables
+    int bottle_type = 0;
+    int bottle_cap = 0;
+    int i;
+    for (i=0;i<6;i++){  //Clear run information
+        runInfo[i] = 0;
+    }
+    lcdClear();
+    printf("...Operating...");
+    int startingTime = getCurrentTimeInSeconds();
+    
+    while (runInfo[1] < 10){    //Run operation until 10 bottles are reached
+        __lcd_newline();
+        while(PORTDbits.RD0 == 0){ //Terminate operation at 170 seconds
+            if (getCurrentTimeInSeconds() - startingTime > 170){
+                endOperation(startingTime);
+                return;
+            }
+        }
+        if (PORTDbits.RD0){ //Microswitch Sensor
+            __lcd_newline();
+            printf("??? INSIDE   ");
+            __delay_ms(500);
+            retractSensorAreaArm();
+            __delay_ms(2000);
+            if (PORTAbits.RA1 == 0){ //Photovoltaic Sensor
+                __lcd_newline();
+                printf("YOP");
+                currentBottle = 0;
+                bottle_type = 0;
+            }else{
+                __lcd_newline();
+                currentBottle = 1;
+                printf("ESKA");
+                bottle_type = 1;
+            }
+            
+            if (capIsOnBottle()){ //RGB Sensors
+                printf(" w/ Cap    ");
+                bottle_cap = 0;
+            }else{
+                printf(" w/o Cap    ");
+                bottle_cap = 1;
+            }
+            
+            //Calculate run info labels
+            runInfo[1] += 1;
+            int bottle = bottle_type*2 + bottle_cap + 2;
+            runInfo[bottle] += 1;
+            
+            //Rotate correct bin under sorting area
+            int requiredBottleBin = bottle - 2;
+            int numberRotationsNeeded;
+            if (requiredBottleBin >= currentBottleBin){
+                numberRotationsNeeded = requiredBottleBin - currentBottleBin;
+            }else if (requiredBottleBin < currentBottleBin){
+                numberRotationsNeeded = requiredBottleBin - currentBottleBin + 4;
+            }
+            moveBinServo(numberRotationsNeeded); //move correct bin under drop area
+            currentBottleBin = requiredBottleBin;
+            
+            di();
+            extendSensorAreaArm(); //push bottle into bin using servo
+            extendSensorAreaArm();
+            ei();
+        }          
+    }
+    //End operation
+    endOperation(startingTime);
+}
+
+void endOperation(int startingTime){
+    disableDCmotors(); //Stop main sorting motors
+    //Display complete message
+    lcdClear();
+    printf("COMPLETED!!!     ");
+    __lcd_newline();
+    printf("A to back       ");  
+    int endingTime = getCurrentTimeInSeconds(); //Obtain time taken during run
+    runInfo[0] = endingTime - startingTime;
+    currentBottleBin = 0;
+    for (int i = 0; i<7;i++){ //Save date and time of run
+        lastRunTime[i] = time[i];
+    }
+    saveEEPROM(); //Save data into EEPROM
+    while(1){
+        unsigned char temp = getPressedKeypadKey();    //Wait for user to return to main menu
+        if (temp == keys[3]){
+            break;
+        }
+    }
+}
+
+//Activate DC motors
+void activateDCmotors(){
+    TMR0IE = 0; //Disable TIMER0
+    TMR1IE = 1; //Enable TIMER1
+    ei(); //Allow general interrupts
+}
+
+//Disable DC motors
+void disableDCmotors(){
+    di(); //Disable general interrupts
+    TMR0IE = 1; //Enable TIMER0
+    TMR1IE = 0; //Disable TIMER1
+    PORTCbits.RC1 = 0;
+}
+
+//Check if 170s have passed since run has started
+int timeIsStillLeft(int startingTime){
+    int currentTime = getCurrentTimeInSeconds();
+    if ((currentTime - startingTime) > 150){
+        return 0;
+    }else{
+        return 1;
+    }
+}
+
+//Activate servo to move to specific bin
+void moveBinServo(int num90Rotations){
+    while (num90Rotations != 0){
+        PORTDbits.RD1 = 1;
+        __delay_us(2200);
+        PORTDbits.RD1 = 0;
+        __delay_us(17800);
+        if (PORTAbits.RA0 == 0){
+            while (PORTAbits.RA0 == 0){
+                PORTDbits.RD1 = 1;
+                __delay_us(2200);
+                PORTDbits.RD1 = 0;
+                __delay_us(17800);
+            }
+            num90Rotations -= 1;
+            __delay_ms(100);
+        }
+    }
+    __delay_ms(200);
+}
+
+//Retract piston arm
+void retractSensorAreaArm(){
+     unsigned int i;
+    for(i=0;i<20;i++){
+        PORTCbits.RC2 = 1;
+        __delay_us(2900);
+        PORTCbits.RC2 = 0;
+        __delay_us(17100);
+    }
+    __delay_ms(500);
+}
+
+//Extend piston arm
+void extendSensorAreaArm(){
+    unsigned int i;
+    for(i=0;i<20;i++){
+        PORTCbits.RC2 = 1;
+        __delay_us(1800);
+        PORTCbits.RC2 = 0;
+        __delay_us(18200);
+    } 
+    __delay_ms(500);
+}
+
+//Activate servo to push bottle off the sensor area
+void pushBottle(){
+    retractSensorAreaArm();
+    __delay_ms(1000);
+    extendSensorAreaArm();
+}   
+
+//Determine DC motor speed
+int getMotorCounterBasedOnBottlesLeft(){
+    breakCounter += 1;
+    if (breakCounter < BREAK_CONSTANT){
+        return 4 + (runInfo[1]/2);
+    }else{
+        if (breakCounter > 350){
+            breakCounter = 0;
+        }
+        return 20000;
+    } 
+}
+
+//Activate EEPROM operations
+void EEPROM(){
+    int screen_state = 0;
+    update_eeprom_screen_state(screen_state);
+    
+    while(1){
+        unsigned char temp = getPressedKeypadKey(); //Cycle screens/exit/enter run info depending on user input
+        if (temp == keys[ENTER]){ //"A"
+            int storage[6], timeStorage[7], i;
+            for (i = 0; i <6; i++){ //Save current runData to enter EEPROM saved run
+                storage[i] = runInfo[i];
+            }   
+            for (i = 0; i<7; i++){
+                timeStorage[i] = lastRunTime[i];
+            }
+            getEEPROM(screen_state);
+            past_run_access();  //Enter EEPROM Display
+            update_eeprom_screen_state(screen_state);
+             for (i = 0; i <6; i++){    //Return runData to what it is
+                runInfo[i] = storage[i];
+            }   
+              for (i = 0; i<7; i++){
+                lastRunTime[i] = timeStorage[i];
+            }
+        }else if (temp == keys[BACK]){ //"D" Go Back
+            break;    
+        }else if (temp == keys[LEFT]){ //"4" Cycle Left
+            cycleProgramScreenLeft(&screen_state,0,3);
+            update_eeprom_screen_state(screen_state);
+        }else if (temp == keys[RIGHT]){ //"6" Cycle Right
+            cycleProgramScreenRight(&screen_state,0,3);
+            update_eeprom_screen_state(screen_state);
+        } 
+    }
+}
+
+//Access past run information
+void past_run_access(){
+    int screen_state = 6;
+    update_past_run_screen_state(screen_state);
+    while(1){
+        unsigned char temp = getPressedKeypadKey(); //Cycle/exits screens based on user input
+        if (temp == keys[BACK]){ //"D"
+            break;    
+        }else if (temp == keys[LEFT]){ //"4"
+            cycleProgramScreenLeft(&screen_state,0,6);
+            update_past_run_screen_state(screen_state);
+        }else if (temp == keys[RIGHT]){ //"6"
+            cycleProgramScreenRight(&screen_state,0,6);
+            update_past_run_screen_state(screen_state);
+        } 
+    }
+}
+
+//Display main program screens 
 void displayMainProgramLcdScreen(){
     lcdClear();
     switch(currentMainProgramScreen){   
@@ -624,19 +580,15 @@ void displayMainProgramLcdScreen(){
             break;
         case 2:
             lcdClear();
-            printf("Access EEPROM");
+            printf("Access Past Runs");
             break;
-        case 3:
-            lcdClear();
-            printf("Access Last Run ");
-            break;    
     }
     __lcd_newline();
-    printf("<4  Start: A  6>");
+    printf("<2  Start: A  3>");
     toggleRTCBasedOnCurrentMainProgramScreen();
 }
 
-//updates EEPROM screen display depending on input
+//Updates EEPROM screen display depending on input
 void update_eeprom_screen_state(int num){
     lcdClear();
     switch(num){
@@ -658,10 +610,10 @@ void update_eeprom_screen_state(int num){
             break;    
     }
     __lcd_newline();
-    printf("<4  Nav: A/1  6>");
+    printf("<2  Nav: A/1  3>");
 }
 
-//updates past run screen display depending on input
+//Updates past run screen display depending on input
 void update_past_run_screen_state(int num){
     lcdClear();
     switch(num){
@@ -692,228 +644,14 @@ void update_past_run_screen_state(int num){
         case 6:
             lcdClear();
             printf("%02x/%02x   ", lastRunTime[5], lastRunTime[4]);    //Print date in YY/MM/DD
-            printf("%02x:%02x:%02x", lastRunTime[2], lastRunTime[1], lastRunTime[0]);    //HH:MM:SS
+            printf("%02x:%02x:%02x", lastRunTime[2] + 1, lastRunTime[1], lastRunTime[0]);    //HH:MM:SS
             break;
     }
     __lcd_newline();
-    printf("<4  Back:  1  6> ");
+    printf("<2  Back:  1  3> ");
 }
 
-//activate autonomous sensor testing
-void operation(){
-    activateDCmotors();
-
-    int bottle_type = 0;
-    int bottle_cap = 0;
-    int i;
-    for (i=0;i<6;i++){  //Clear run information
-        runInfo[i] = 0;
-    }
-    lcdClear();
-    printf("...Operating...");
-    updateCurrentTime();
-    int startingTime = getCurrentTimeInSeconds();
-    
-    lastSortedBottleTime = getCurrentTimeInSeconds();
-    
-    while (runInfo[1] < 10){    //Run operation until 10 bottles are reached
-        __lcd_newline();
-        //printf("NO BOTTLE    ");
-        while(PORTDbits.RD0 == 0){}  //activate fail-safes
-        if (PORTDbits.RD0){ //Microswitch Sensor
-            __lcd_newline();
-            printf("??? INSIDE   ");
-            __delay_ms(500);
-            retractSensorAreaArm();
-            __delay_ms(500);
-            if (PORTAbits.RA1 == 0){ //Photovoltaic Sensor
-                __lcd_newline();
-                printf("YOP");
-                currentBottle = 0;
-                bottle_type = 0;
-            }else{
-                __lcd_newline();
-                currentBottle = 1;
-                printf("ESKA");
-                bottle_type = 1;
-            }
-            
-            if (capIsOnBottle()){ //RGB Sensors
-                printf(" w/ Cap    ");
-                bottle_cap = 0;
-            }else{
-                printf(" w/o Cap    ");
-                bottle_cap = 1;
-            }
-            runInfo[1] += 1;
-            int bottle = bottle_type*2 + bottle_cap + 2;
-            runInfo[bottle] += 1;
-            
-            
-            __delay_ms(1000);
-            
-            int requiredBottleBin = bottle - 2;
-            int numberRotationsNeeded;
-            if (requiredBottleBin >= currentBottleBin){
-                numberRotationsNeeded = requiredBottleBin - currentBottleBin;
-            }else if (requiredBottleBin < currentBottleBin){
-                numberRotationsNeeded = requiredBottleBin - currentBottleBin + 4;
-            }
-            moveBinServo(numberRotationsNeeded); //move correct bin under drop area
-            currentBottleBin = requiredBottleBin;
-            di();
-            extendSensorAreaArm(); //push bottle into bin using servo
-            ei();
-            
-            lastSortedBottleTime = getCurrentTimeInSeconds();
-        }          
-    }
-    disableDCmotors(); //Stop main sorting motors
-    lcdClear();
-    printf("COMPLETED!!!     ");
-    __lcd_newline();
-    printf("A to back       ");
-    updateCurrentTime();        //Obtain time taken during run
-    int endingTime = getCurrentTimeInSeconds();
-    runInfo[0] = endingTime - startingTime;
-    for (i = 0; i<7;i++){ 
-        lastRunTime[i] = time[i];
-    }
-    saveEEPROM(); //Save data into EEPROM
-    while(1){
-        unsigned char temp = getPressedKeypadKey();    //Wait for user to return to main menu
-        if (temp == keys[3]){
-            break;
-        }
-    }
-}
-
-void activateDCmotors(){
-    TMR0IE = 0; //Disable TIMER0
-    TMR1IE = 1; //Enable TIMER1
-    ei(); //Allow general interrupts
-}
-
-void disableDCmotors(){
-    di(); //Disable general interrupts
-    TMR0IE = 1; //Enable TIMER0
-    TMR1IE = 0; //Disable TIMER1
-}
-
-int timeIsStillLeft(int startingTime){
-    int currentTime = getCurrentTimeInSeconds();
-    if ((currentTime - startingTime) > 150){
-        printf("ayylmao");
-        return 0;
-    }else{
-        return 1;
-    }
-}
-
-//activate servo to move to specific bin
-void moveBinServo(int num90Rotations){
-    while (num90Rotations != 0){
-        PORTDbits.RD1 = 1;
-        __delay_us(2200);
-        PORTDbits.RD1 = 0;
-        __delay_us(17800);
-        if (PORTAbits.RA0 == 0){
-            while (PORTAbits.RA0 == 0){
-                PORTDbits.RD1 = 1;
-                __delay_us(2200);
-                PORTDbits.RD1 = 0;
-                __delay_us(17800);
-            }
-            num90Rotations -= 1;
-            //lcdClear();
-            //printf("%i",num90Rotations);
-        }
-    }
-    __delay_ms(300);
-}
-
-void retractSensorAreaArm(){
-     unsigned int i;
-    for(i=0;i<20;i++){
-        PORTCbits.RC2 = 1;
-        __delay_us(2800);
-        PORTCbits.RC2 = 0;
-        __delay_us(17200);
-    }
-    __delay_ms(500);
-}
-
-
-void extendSensorAreaArm(){
-    unsigned int i;
-    for(i=0;i<20;i++){
-        PORTCbits.RC2 = 1;
-        __delay_us(1800);
-        PORTCbits.RC2 = 0;
-        __delay_us(18200);
-    } 
-    __delay_ms(500);
-}
-
-
-//activate servo to push bottle off the sensor area
-void pushBottle(){
-    retractSensorAreaArm();
-    __delay_ms(1000);
-    extendSensorAreaArm();
-}   
-
-int getMotorCounterBasedOnBottlesLeft(){
-    /*updateCurrentTime();
-    int currentTime = getCurrentTimeInSeconds();
-    lcdClear();
-    printf("%i", currentTime - lastSortedBottleTime);
-    if ((currentTime - lastSortedBottleTime) > 20){
-        lcdClear();
-        printf("project review");
-        lastSortedBottleTime = currentTime;
-        return rand() % 5 + 5;
-    }*/
-    return 5 + (runInfo[1]/2);
-}
-
-//activate EEPROM operations
-void EEPROM(){
-    int screen_state = 0;
-    update_eeprom_screen_state(screen_state);
-    
-    while(1){
-        unsigned char temp = getPressedKeypadKey(); //Cycle screens/exit/enter run info depending on user input
-        if (temp == keys[ENTER]){ //"A"
-            int storage[6], timeStorage[7], i;
-            for (i = 0; i <6; i++){ //Save current runData to enter EEPROM saved run
-                storage[i] = runInfo[i];
-            }   
-            for (i = 0; i<7; i++){
-                timeStorage[i] = lastRunTime[i];
-            }
-            getEEPROM(screen_state);
-            past_run_access();
-            update_eeprom_screen_state(screen_state);
-             for (i = 0; i <6; i++){
-                runInfo[i] = storage[i];
-            }   
-              for (i = 0; i<7; i++){
-                lastRunTime[i] = timeStorage[i];
-            }
-        }else if (temp == keys[BACK]){ //"D"
-            break;    
-        }else if (temp == keys[LEFT]){ //"4"
-            cycleProgramScreenLeft(&screen_state,0,3);
-            update_eeprom_screen_state(screen_state);
-        }else if (temp == keys[RIGHT]){ //"6"
-            cycleProgramScreenRight(&screen_state,0,3);
-            update_eeprom_screen_state(screen_state);
-        } 
-    }
-}
-
-//save the EEPROM data for the run
+//Save the EEPROM data for the run
 void saveEEPROM(){
     int i;
     int temp;
@@ -937,7 +675,7 @@ void saveEEPROM(){
     }
 }
 
-//obtain specific EEPROM data
+//Obtain specific EEPROM data
 void getEEPROM(int num){
     int i;
     for (i = 0; i<6; i++){
@@ -945,24 +683,6 @@ void getEEPROM(int num){
     }
     for (i = 0; i<7; i++){
         lastRunTime[i] = Eeprom_ReadByte(12*(6+i)+num*200);
-    }
-}
-
-//access past run information
-void past_run_access(){
-    int screen_state = 6;
-    update_past_run_screen_state(screen_state);
-    while(1){
-        unsigned char temp = getPressedKeypadKey(); //Cycle/exits screens based on user input
-        if (temp == keys[BACK]){ //"D"
-            break;    
-        }else if (temp == keys[LEFT]){ //"4"
-            cycleProgramScreenLeft(&screen_state,0,6);
-            update_past_run_screen_state(screen_state);
-        }else if (temp == keys[RIGHT]){ //"6"
-            cycleProgramScreenRight(&screen_state,0,6);
-            update_past_run_screen_state(screen_state);
-        } 
     }
 }
 
