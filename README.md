@@ -10,7 +10,7 @@ Keypad and LCD display for user control of the robot
 
 EEPROM usage to store past operation data
 
-Operation of 3 motors (D.C and Servo) and 5 sensors (Microswitch, Photovoltaic, Color) to differentiate between 10+ randomly loaded bottles of 4 different types and sort each bottle into their respective bin.
+Operation of 3 motors (D.C and Servo) and 5 sensors (Microswitch, Photovoltaic, Color) to differentiate between 10+ randomly loaded bottles of 4 different types and sort each bottle into their respective bin. 
 
 #### Team Credits:
 
