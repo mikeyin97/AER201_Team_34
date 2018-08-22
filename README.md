@@ -16,6 +16,6 @@ Operation of 3 motors (D.C and Servo) and 5 sensors (Microswitch, Photovoltaic, 
 
 Gary Leung - Microcontroller Member (Code and Hardware setup related to PIC18F4620 microprocessor)
 
-Michael Yin - Circuits Member (Circuit setup between electrical parts and microprocessor, and overall machine power)
+Mike Yin - Circuits Member (Circuit setup between electrical parts and microprocessor, as well as overall machine power)
 
 Jacob Smith - Electromechanical Member (All hardware and mechanical parts including the frame, mounts and much more)
